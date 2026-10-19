@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f6f8fb">
+  <meta name="description" content="徐梓皓 · 游戏角色动画作品集。支持手机与电脑在线播放。">
+  <meta property="og:title" content="徐梓皓 · 角色动画作品集">
+  <meta property="og:description" content="角色动画作品集 · 在线观看">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://xuzihao976-cmd.github.io/animation-portfolio-20261020/">
+  <meta property="og:image" content="https://xuzihao976-cmd.github.io/animation-portfolio-20261020/assets/reel-poster.jpg">
+  <title>徐梓皓 · 角色动画作品集</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23128ac2'/%3E%3Cpath d='m25 18 22 14-22 14z' fill='white'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="./style.css">
+  <script src="./app.js" defer></script>
+</head>
+<body>
+  <header class="masthead">
+    <a class="identity" href="./" aria-label="徐梓皓作品集首页"><span class="monogram" aria-hidden="true">徐</span><span>徐梓皓<span class="identity-divider">/</span>角色动画</span></a>
+    <span class="edition">SHOWREEL <b>2026</b></span>
+  </header>
+  <main>
+    <div class="intro">
+      <div><p class="eyebrow">游戏角色动画</p><h1>角色动画作品集</h1></div>
+      <span class="duration" id="duration">00:25</span>
+    </div>
+    <section class="player-section" aria-label="作品集视频播放器">
+      <div class="player" id="player">
+        <video id="reel" controls playsinline preload="metadata" poster="./assets/reel-poster.jpg" aria-label="徐梓皓角色动画作品集视频">
+          <source src="./assets/animation-reel.mp4" type="video/mp4">
+          你的浏览器暂不支持在线播放，请使用下方的下载按钮观看。
+        </video>
+        <button class="play-cover" id="play-cover" type="button" aria-label="播放作品集视频" hidden>
+          <span class="play-disc"><svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span>
+          <span class="play-text">播放作品集</span>
+        </button>
+      </div>
+      <div class="player-footer">
+        <div class="video-info"><span class="status-dot" aria-hidden="true"></span><span>徐梓皓<span class="info-divider">·</span>角色动画作品展示</span></div>
+        <div class="actions">
+          <button type="button" id="fullscreen" class="text-action"><svg width="17" height="17" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5"/></svg>全屏观看</button>
+          <a class="text-action" href="./assets/animation-reel.mp4" download="徐梓皓_角色动画作品集.mp4"><svg width="17" height="17" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M4 17v4h16v-4"/></svg>下载视频</a>
+        </div>
+      </div>
+      <p class="error-message" id="video-error" role="alert" hidden>视频暂时未能加载。请刷新页面，或下载视频观看。</p>
+    </section>
+    <footer class="page-footer">
+      <p>用动作讲述角色。</p>
+      <button type="button" class="share-action" id="share"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V4a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h4"/></svg><span>复制作品集链接</span></button>
+    </footer>
+    <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+  </main>
+</body>
+</html>
