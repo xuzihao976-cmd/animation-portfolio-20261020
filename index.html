@@ -12,8 +12,10 @@
   <meta property="og:image" content="https://xuzihao976-cmd.github.io/animation-portfolio-20261020/assets/reel-poster.jpg">
   <title>徐梓皓 · 角色动画作品集</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23128ac2'/%3E%3Cpath d='m25 18 22 14-22 14z' fill='white'/%3E%3C/svg%3E">
-  <link rel="stylesheet" href="./style.css">
-  <script src="./app.js" defer></script>
+  <link rel="preload" as="image" href="./assets/reel-poster.jpg">
+  <link rel="stylesheet" href="./style.css?v=20261020-speed1">
+  <link rel="stylesheet" href="./player.css?v=20261020-speed1">
+  <script src="./player.js?v=20261020-speed1" defer></script>
 </head>
 <body>
   <header class="masthead">
@@ -27,8 +29,7 @@
     </div>
     <section class="player-section" aria-label="作品集视频播放器">
       <div class="player" id="player">
-        <video id="reel" controls playsinline preload="metadata" poster="./assets/reel-poster.jpg" aria-label="徐梓皓角色动画作品集视频">
-          <source src="./assets/animation-reel.mp4" type="video/mp4">
+        <video id="reel" src="./assets/animation-reel-720p.mp4" controls playsinline preload="auto" width="948" height="720" poster="./assets/reel-poster.jpg" aria-label="徐梓皓角色动画作品集视频">
           你的浏览器暂不支持在线播放，请使用下方的下载按钮观看。
         </video>
         <button class="play-cover" id="play-cover" type="button" aria-label="播放作品集视频" hidden>
@@ -39,11 +40,13 @@
       <div class="player-footer">
         <div class="video-info"><span class="status-dot" aria-hidden="true"></span><span>徐梓皓<span class="info-divider">·</span>角色动画作品展示</span></div>
         <div class="actions">
+          <label class="quality-control" for="quality"><span>画质</span><select id="quality" aria-label="视频画质"><option value="720" selected>流畅 720p</option><option value="1080">高清 1080p</option><option value="540">省流 540p</option></select></label>
           <button type="button" id="fullscreen" class="text-action"><svg width="17" height="17" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5"/></svg>全屏观看</button>
-          <a class="text-action" href="./assets/animation-reel.mp4" download="徐梓皓_角色动画作品集.mp4"><svg width="17" height="17" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M4 17v4h16v-4"/></svg>下载视频</a>
+          <a class="text-action" href="./assets/animation-reel.mp4" download="徐梓皓_角色动画作品集.mp4"><svg width="17" height="17" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M4 17v4h16v-4"/></svg>下载高清</a>
         </div>
       </div>
-      <p class="error-message" id="video-error" role="alert" hidden>视频暂时未能加载。请刷新页面，或下载视频观看。</p>
+      <div class="playback-feedback"><p id="playback-status" class="playback-status" role="status" aria-live="polite">正在准备视频…</p><button type="button" id="retry" class="text-action" hidden>重新加载</button></div>
+      <p class="error-message" id="video-error" role="alert" hidden>视频暂时未能加载，可以重新加载、切换画质或下载观看。</p>
     </section>
     <footer class="page-footer">
       <p>用动作讲述角色。</p>
