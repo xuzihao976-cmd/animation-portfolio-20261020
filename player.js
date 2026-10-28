@@ -9,9 +9,9 @@ const retry = document.getElementById("retry");
 const quality = document.getElementById("quality");
 const toast = document.getElementById("toast");
 const sources = {
-  "720": { url: "./assets/animation-reel-720p.mp4?v=20261028-ee53f356", label: "流畅 720p" },
-  "1080": { url: "./assets/animation-reel.mp4?v=20261028-ee53f356", label: "高清 1080p" },
-  "540": { url: "./assets/animation-reel-540p.mp4?v=20261028-ee53f356", label: "省流 540p" }
+  "720": { url: "./assets/animation-reel-720p.mp4?v=20261028-d3d4789c", label: "流畅 720p" },
+  "1080": { url: "./assets/animation-reel.mp4?v=20261028-d3d4789c", label: "高清 1080p" },
+  "540": { url: "./assets/animation-reel-540p.mp4?v=20261028-d3d4789c", label: "省流 540p" }
 };
 let toastTimer;
 let waitTimer;
